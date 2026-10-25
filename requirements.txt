@@ -1,0 +1,12 @@
+# ===== 阶段 0 依赖 =====
+# 安装：pip install -r requirements.txt
+# 或：  uv pip install -r requirements.txt
+langchain==1.4.7
+langchain-core>=1.7,<2
+langchain-openai>=1.7,<2
+langchain-ollama>=1.1,<2
+python-dotenv>=1.0
+
+# 后续阶段会追加（现在不用装）：
+#   阶段 3：langgraph-checkpoint-sqlite
+#   阶段 7：langchain-text-splitters + 向量库（chromadb / faiss-cpu）

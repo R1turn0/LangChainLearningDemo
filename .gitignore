@@ -1,0 +1,93 @@
+# ===== 依赖与虚拟环境 =====
+# Python 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# 依赖锁文件（保留 requirements.txt 用于复现环境）
+# 若使用 Poetry/PDM 需要提交锁文件，请删除下面两行
+# poetry.lock
+# pdm.lock
+
+# Node.js（若 Demo 中使用 JS 版 LangChain）
+node_modules/
+.pnpm-store/
+
+# ===== Python 运行产物 =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# 打包与构建
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# 类型检查与测试缓存
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+
+# ===== 密钥与配置 =====
+# 真实环境变量文件（不要把 API Key 提交到仓库）
+.env
+.env.*
+!.env.example
+
+# 本地配置覆盖
+config.local.*
+*.local.yaml
+*.local.yml
+
+# ===== 日志与临时文件 =====
+*.log
+logs/
+.tmp/
+tmp/
+.DS_Store
+Thumbs.db
+
+# ===== IDE 与编辑器 =====
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.iml
+*.swp
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== LangChain / 向量数据库本地数据 =====
+# 本地缓存与数据库
+.langchain.db
+.cache/
+.langchain_cache/
+
+# Chroma
+chroma/
+chroma_db/
+.chroma/
+*.sqlite3
+*.db
+
+# FAISS
+*.faiss
+*.index
+
+# 本地文档加载的原始语料与模型权重
+data/raw/
+models/
+
+# 模型 API Key
+.env.example

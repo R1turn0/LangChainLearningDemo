@@ -88,6 +88,3 @@ chroma_db/
 # 本地文档加载的原始语料与模型权重
 data/raw/
 models/
-
-# 模型 API Key
-.env.example

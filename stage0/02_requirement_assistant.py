@@ -29,6 +29,7 @@ from pydantic import BaseModel, Field
 
 from common.llm import describe_model, get_model, is_fake
 
+
 # ---------------------------------------------------------------------------
 # 1. 用 Pydantic 定义"模型必须遵守的输出格式"
 # ---------------------------------------------------------------------------
@@ -64,7 +65,10 @@ def build_analyzer():
     #   1) 把 Pydantic 模型的字段转成 JSON Schema，作为工具定义发给模型
     #   2) 拿到模型返回后，自动校验并构造成 RequirementAnalysis 对象
     # 所以它只对"支持 tool calling / json schema"的模型有效。
-    structured_model = model.with_structured_output(RequirementAnalysis)
+    # method="function_calling"：用"工具调用"承载结构（DeepSeek 不支持 response_format=json_schema，默认的 json_schema 路线会报 400）
+    structured_model = model.with_structured_output(
+        RequirementAnalysis, method="function_calling"
+    )
 
     prompt = ChatPromptTemplate.from_messages(
         [
